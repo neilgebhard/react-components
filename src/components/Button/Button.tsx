@@ -1,6 +1,5 @@
 import React, { MouseEventHandler, FC } from "react";
 import styled from "styled-components";
-import "./Button.css";
 
 export interface ButtonProps {
   label?: string;
