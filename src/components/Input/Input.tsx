@@ -32,25 +32,21 @@ const StyledInput = styled.input<InputProps>`
   }
 `;
 
-const StyledLabel = styled.div<InputProps>`
+const StyledLabel = styled.label<InputProps>`
+  display: block;
   font-size: 14px;
-  color: ${(props) => (props.disabled ? "#e4e3ea" : "#080808")};
   padding-bottom: 6px;
 `;
 
-const StyledMessage = styled.div<InputProps>`
+const StyledError = styled.p<InputProps>`
   font-size: 14px;
   color: #a9150b8;
   padding-top: 4px;
-`;
-
-const StyledText = styled.p<InputProps>`
-  margin: 0px;
-  color: ${(props) =>
-    props.disabled ? "#e4e3ea" : props.error ? "#a9150b" : "#080808"};
+  color: #a9150b;
 `;
 
 const Input: FC<InputProps> = ({
+  id,
   disabled,
   label,
   error,
@@ -60,21 +56,16 @@ const Input: FC<InputProps> = ({
 }) => {
   return (
     <Fragment>
-      <StyledLabel>
-        <StyledText disabled={disabled} error={error} success={success}>
-          {label}
-        </StyledText>
-      </StyledLabel>
+      <StyledLabel htmlFor={id}>{label}</StyledLabel>
       <StyledInput
+        id={id}
         type="text"
         disabled={disabled}
         error={error}
         success={success}
         {...props}
-      ></StyledInput>
-      <StyledMessage>
-        <StyledText error={error}>{message}</StyledText>
-      </StyledMessage>
+      />
+      {error && <StyledError>{message}</StyledError>}
     </Fragment>
   );
 };
