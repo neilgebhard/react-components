@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/neilgebhard"
   },
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "A React component library",
   "scripts": {
     "rollup": "rollup -c",
