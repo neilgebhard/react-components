@@ -12,7 +12,8 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   id: "id",
-  label: "Input",
+  label: "Default",
+  placeholder: "Placeholder",
 };
 
 export const Error = Template.bind({});
@@ -23,9 +24,17 @@ Error.args = {
   message: "An error occurred",
 };
 
-export const Placeholder = Template.bind({});
-Placeholder.args = {
+export const Success = Template.bind({});
+Success.args = {
   id: "id",
-  label: "Placeholder",
+  label: "Success",
+  success: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  id: "id",
+  label: "Disabled",
   placeholder: "Placeholder",
+  disabled: true,
 };

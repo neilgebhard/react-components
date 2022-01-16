@@ -41,7 +41,8 @@ const StyledLabel = styled.label<InputProps>`
 const StyledError = styled.p<InputProps>`
   font-size: 14px;
   color: #a9150b8;
-  padding-top: 4px;
+  margin: 0;
+  padding-top: 6px;
   color: #a9150b;
 `;
 
